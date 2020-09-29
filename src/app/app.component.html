@@ -1,9 +1,6 @@
-<mat-grid-list cols="2" rowHeight="2:1">
-  <mat-grid-tile>
-    <app-map>
-
-    </app-map>
-  </mat-grid-tile>
-  <mat-grid-tile>1</mat-grid-tile>
-</mat-grid-list>
+<div class="top-bar">
+  <a routerLinkActive="mat-raised-button" mat-button routerLink="dashboard">Dashboard</a>
+  <a routerLinkActive="mat-raised-button" mat-button routerLink="detail/:id">New airbase</a>
+</div>
+<router-outlet></router-outlet>
 
