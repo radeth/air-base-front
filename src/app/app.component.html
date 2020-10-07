@@ -2,5 +2,19 @@
   <a routerLinkActive="mat-raised-button" mat-button routerLink="dashboard">Dashboard</a>
   <a routerLinkActive="mat-raised-button" mat-button routerLink="detail/:id">New airbase</a>
 </div>
-<router-outlet></router-outlet>
+<div [style.height]="'auto'">
+  <as-split
+    class="split-example ex-percent"
+    unit="percent"
+    direction="horizontal"
+    (dragEnd)="dragEnd('percent', $event)">
+    <as-split-area size="50">
+      <app-map></app-map>
+    </as-split-area>
+    <as-split-area size="50">
+      <router-outlet></router-outlet>
+    </as-split-area>
+  </as-split>
+</div>
+
 

@@ -8,18 +8,14 @@ import {AirbaseDto} from "../model/airbase-dto";
   styleUrls: ['./dashbord.component.scss']
 })
 export class DashbordComponent implements OnInit {
-
+  allAirbase: AirbaseDto[];
   constructor(private backendService: BackendService) {
   }
 
   ngOnInit(): void {
-    this.backendService.getAllAirbase().subscribe((value) => {
-      console.log(value);
+    this.backendService.getAllAirbase().subscribe((value: AirbaseDto[]) => {
+      this.allAirbase = value;
     });
-
-    this.backendService.getAirbaseByid(1).subscribe((value: AirbaseDto) => {
-      console.log(value);
-    })
   }
 
 }
